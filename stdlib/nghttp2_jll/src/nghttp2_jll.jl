@@ -20,6 +20,8 @@ if Sys.iswindows()
     const libnghttp2 = "libnghttp2-14.dll"
 elseif Sys.isapple()
     const libnghttp2 = "@rpath/libnghttp2.14.dylib"
+elseif Sys.isopenbsd()
+    const libnghttp2 = "libnghttp2.so"
 else
     const libnghttp2 = "libnghttp2.so.14"
 end

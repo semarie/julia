@@ -20,8 +20,8 @@ llvmlibunwind_path::String = ""
 const llvmlibunwind = "libunwind"
 
 function __init__()
-    # We only dlopen something on MacOS
-    @static if Sys.isapple()
+    # We only dlopen something on MacOS or OpenBSD
+    @static if Sys.isapple() || Sys.isopenbsd()
         global llvmlibunwind_handle = dlopen(llvmlibunwind)
         global llvmlibunwind_path = dlpath(llvmlibunwind_handle)
         global artifact_dir = dirname(Sys.BINDIR)
@@ -33,7 +33,7 @@ end
 # JLLWrappers API compatibility shims.  Note that not all of these will really make sense.
 # For instance, `find_artifact_dir()` won't actually be the artifact directory, because
 # there isn't one.  It instead returns the overall Julia prefix.
-is_available() = @static Sys.isapple() ? true : false
+is_available() = @static Sys.isapple() || Sys.isopenbsd() ? true : false
 find_artifact_dir() = artifact_dir
 dev_jll() = error("stdlib JLLs cannot be dev'ed")
 best_wrapper = nothing

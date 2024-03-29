@@ -35,6 +35,8 @@ if Sys.iswindows()
     const libmpfr = "libmpfr-6.dll"
 elseif Sys.isapple()
     const libmpfr = "@rpath/libmpfr.6.dylib"
+elseif Sys.isopenbsd()
+    const libmpfr = "libmpfr.so"
 else
     const libmpfr = "libmpfr.so.6"
 end

@@ -1626,6 +1626,10 @@ endif
 ifneq ($(findstring $(OS),Linux FreeBSD),)
 LIBGCC_NAME := libgcc_s.$(SHLIB_EXT).1
 endif
+ifeq ($(OS),OpenBSD)
+# TODO OpenBSD
+LIBGCC_NAME := libc++abi.$(SHLIB_EXT)
+endif
 
 # USE_SYSTEM_CSL causes it to get symlinked into build_private_shlibdir
 ifeq ($(USE_SYSTEM_CSL),1)

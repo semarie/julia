@@ -21,6 +21,8 @@ if Sys.iswindows()
     const libgit2 = "libgit2.dll"
 elseif Sys.isapple()
     const libgit2 = "@rpath/libgit2.1.8.dylib"
+elseif Sys.isopenbsd()
+    const libgit2 = "libgit2.so"
 else
     const libgit2 = "libgit2.so.1.8"
 end

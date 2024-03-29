@@ -21,6 +21,8 @@ if Sys.iswindows()
     const libssh2 = "libssh2.dll"
 elseif Sys.isapple()
     const libssh2 = "@rpath/libssh2.1.dylib"
+elseif Sys.isopenbsd()
+    const libssh2 = "libssh2.so"
 else
     const libssh2 = "libssh2.so.1"
 end

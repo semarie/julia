@@ -22,6 +22,8 @@ const libblastrampoline = if Sys.iswindows()
     "libblastrampoline-5.dll"
 elseif Sys.isapple()
     "@rpath/libblastrampoline.5.dylib"
+elseif Sys.isopenbsd()
+    "libblastrampoline.so"
 else
     "libblastrampoline.so.5"
 end

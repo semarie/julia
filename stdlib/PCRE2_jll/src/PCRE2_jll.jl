@@ -20,6 +20,8 @@ if Sys.iswindows()
     const libpcre2_8 = "libpcre2-8-0.dll"
 elseif Sys.isapple()
     const libpcre2_8 = "@rpath/libpcre2-8.0.dylib"
+elseif Sys.isopenbsd()
+    const libpcre2_8 = "libpcre2-8.so"
 else
     const libpcre2_8 = "libpcre2-8.so.0"
 end

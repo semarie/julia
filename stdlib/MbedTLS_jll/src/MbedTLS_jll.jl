@@ -29,6 +29,10 @@ elseif Sys.isapple()
     const libmbedcrypto = "@rpath/libmbedcrypto.7.dylib"
     const libmbedtls = "@rpath/libmbedtls.14.dylib"
     const libmbedx509 = "@rpath/libmbedx509.1.dylib"
+elseif Sys.isopenbsd()
+    const libmbedcrypto = "libmbedcrypto.so"
+    const libmbedtls = "libmbedtls.so"
+    const libmbedx509 = "libmbedx509.so"
 else
     const libmbedcrypto = "libmbedcrypto.so.7"
     const libmbedtls = "libmbedtls.so.14"

@@ -21,6 +21,8 @@ if Sys.iswindows()
     const libcurl = "libcurl-4.dll"
 elseif Sys.isapple()
     const libcurl = "@rpath/libcurl.4.dylib"
+elseif Sys.isopenbsd()
+    const libcurl = "libcurl.so"
 else
     const libcurl = "libcurl.so.4"
 end

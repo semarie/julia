@@ -20,6 +20,8 @@ if Sys.iswindows()
     const libz = "libz.dll"
 elseif Sys.isapple()
     const libz = "@rpath/libz.1.dylib"
+elseif Sys.isopenbsd()
+    const libz = "libz.so"
 else
     const libz = "libz.so.1"
 end
