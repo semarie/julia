@@ -20,6 +20,8 @@ if Sys.iswindows()
     const libopenlibm = "libopenlibm.dll"
 elseif Sys.isapple()
     const libopenlibm = "@rpath/libopenlibm.4.dylib"
+elseif Sys.isopenbsd()
+    const libopenlibm = "libopenlibm.so"
 else
     const libopenlibm = "libopenlibm.so.4"
 end

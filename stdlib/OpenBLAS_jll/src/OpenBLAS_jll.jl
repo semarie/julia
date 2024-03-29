@@ -38,6 +38,9 @@ if Sys.iswindows()
 elseif Sys.isapple()
     const libopenblas = "@rpath/libopenblas$(libsuffix).dylib"
     const _libgfortran = string("@rpath/", "libgfortran.", libgfortran_version(HostPlatform()).major, ".dylib")
+elseif Sys.isopenbsd()
+    const libopenblas = "libopenblas$(libsuffix).so"
+    const _libgfortran = "libgfortran.so";
 else
     const libopenblas = "libopenblas$(libsuffix).so"
     const _libgfortran = string("libgfortran.so.", libgfortran_version(HostPlatform()).major)

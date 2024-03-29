@@ -41,6 +41,11 @@ elseif Sys.isapple()
     const libstdcxx = "@rpath/libstdc++.6.dylib"
     const libgomp = "@rpath/libgomp.1.dylib"
     const libssp = "@rpath/libssp.0.dylib"
+elseif Sys.isopenbsd()
+    const libgcc_s = "libc++abi.so"
+    const libgfortran = "libgfortran.so";
+    const libstdcxx = "libc++.so";
+    const libgomp = "libgomp.so";
 else
     const libgcc_s = "libgcc_s.so.1"
     const libgfortran = string("libgfortran.so.", libgfortran_version(HostPlatform()).major)

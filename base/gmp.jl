@@ -25,6 +25,8 @@ if Sys.iswindows()
     const libgmp = "libgmp-10.dll"
 elseif Sys.isapple()
     const libgmp = "@rpath/libgmp.10.dylib"
+elseif Sys.isopenbsd()
+    const libgmp = "libgmp.so"
 else
     const libgmp = "libgmp.so.10"
 end
